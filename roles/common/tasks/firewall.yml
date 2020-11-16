@@ -5,6 +5,6 @@
   ufw: state=enabled policy=reject
   sudo: true
 - name: Only allow incoming traffic from trusted networks
-  ufw: rule=allow src={{ item }} state=enabled
+  ufw: rule=allow src="{{ item }}" state=enabled
   with_items: "{{ trusted_networks }}"
 
