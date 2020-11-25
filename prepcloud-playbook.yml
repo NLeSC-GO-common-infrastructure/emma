@@ -38,6 +38,11 @@
       path: /etc/apt/apt.conf.d/00aptitude
       line: 'Acquire::Languages "none";'
 
+  - name: disable u-u services
+    shell : "sudo systemctl mask unatended-upgrades.service && sudo systemctl stop unatended-upgrades.service && sleep 20"
+  - name: disable apt-daily services
+    shell : "sudo systemctl mask apt-daily.service && sudo systemctl stop apt-daily.service && sleep 20 "
+
   - name: Update apt cache
     apt: update_cache=yes
   - name: Install dbus
