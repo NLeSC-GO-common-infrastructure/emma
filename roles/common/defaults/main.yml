@@ -1,6 +1,7 @@
 ---
 users:
-  - name: "{{ lookup('env', 'CLUSTER_NAME') }}"
+  - name: "{{ CLUSTER_NAME }}"
+  #- name: "{{ lookup('env', 'CLUSTER_NAME') }}"
     uid: 1100
     # Password created with `mkpasswd --method=SHA-512 pass1234`
     password: $6$6/6NkDn01w$6ld/sdc/B42cVtSNFQTQLlNPYOqin8m4kluy.QbvtLraHLliTs5QaPIYJcKyYr7KKhsY2znFZLSC2YzdROKwZ.
@@ -22,4 +23,5 @@ create_swap_space: false
 #Define the JAVA_HOME (default: "/usr/lib/jvm/java-8-openjdk-amd64")
 java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
 
-emma_modules_dir: "/data/local/{{ lookup('env', 'CLUSTER_NAME') }}/modules"
+#emma_modules_dir: "/data/local/{{ lookup('env', 'CLUSTER_NAME') }}/modules"
+emma_modules_dir: "/data/local/{{ CLUSTER_NAME }}/modules"
