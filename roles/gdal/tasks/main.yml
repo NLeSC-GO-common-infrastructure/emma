@@ -12,7 +12,7 @@
 
 - name: Update apt cache
   apt: update_cache=yes
-  when: is_gdal_installed|failed
+  when: is_gdal_installed is failed
   tags:
     - gdal
 
