@@ -27,8 +27,15 @@ java_home: "/usr/lib/jvm/java-8-openjdk-amd64"
 
 #List of extra Python packages to installed, use --tags "extra_python_packages"
 python_packages:
+  - numpy
+  - scipy
   - sklearn
   - hdfs
+  - shapely
+  - rasterio
+  - scikit-learn
+  - scikit-image
+  - statsmodels
 
 #List of extra System packages to installed, use --tags "extra_system_packages"
 system_packages:
