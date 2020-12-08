@@ -6,7 +6,7 @@
 
 - name: add repository for GDAL
   apt_repository: repo=ppa:ubuntugis/ubuntugis-unstable
-  when: is_gdal_installed|failed
+  when: is_gdal_installed is failed
   tags:
     - gdal
 
@@ -18,7 +18,7 @@
 
 - name: Upgrade APT to the lastest packages
   apt: upgrade=full
-  when: is_gdal_installed|failed
+  when: is_gdal_installed is failed
   tags:
     - gdal
 
@@ -27,7 +27,7 @@
   with_items:
     - gdal-bin
     - libgdal-dev
-  when: is_gdal_installed|failed
+  when: is_gdal_installed is failed
   tags:
     - gdal
 
